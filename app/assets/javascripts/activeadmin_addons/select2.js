@@ -82,6 +82,8 @@ $(function() {
       var minimumInputLength = $(el).data('minimum_input_length');
       var order = fields[0] + '_desc';
       var parentId = $(el).data('parent_id') || INVALID_PARENT_ID;
+      var placeholder = $(el).data('placeholder');
+      var allowClear = $(el).data('allow_clear');
       var selectInstance;
 
       var ajaxOptions = {
@@ -146,6 +148,8 @@ $(function() {
         width: width,
         containerCssClass: 'nested-select-container',
         minimumInputLength: minimumInputLength,
+        placeholder: placeholder,
+        allowClear: allowClear,
         initSelection: function(element, callback) {
           var id = $(element).val();
           var text = $(element).data('selected') || '';
